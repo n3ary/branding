@@ -1,0 +1,12 @@
+packages:
+  - '.'
+
+# pnpm 11 blocks postinstall scripts by default. The regen scripts
+# need sharp's native binary (libvips + prebuilt binaries) and
+# tsx's esbuild binary, both built during install. Pre-approve
+# them — neither is fetched fresh per install (sharp is a pinned
+# dep, tsx is a devDep); the build script is what populates the
+# platform-specific binary into node_modules.
+allowBuilds:
+  esbuild: true
+  sharp: true

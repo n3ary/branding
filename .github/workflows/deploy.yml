@@ -1,0 +1,66 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+
+# Deploys site/ + the freshly-built dist/ to the Cloudflare Pages
+# project 'branding' (branding.n3ary.com).
+#
+# The Pages project name stays 'branding' in Cloudflare even though
+# the repo lives at n3ary/branding. Same rationale as the app repo:
+# deploy-time references are the source-of-truth, the custom domain
+# follows the project.
+
+concurrency:
+  group: branding-deploy
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6.4.0
+        with:
+          node-version: 24
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6.0.9
+        with:
+          version: 11
+
+      - name: Install dependencies
+        run: |
+          pnpm clean --lockfile
+          pnpm install --no-frozen-lockfile
+
+      - name: Build artefacts
+        run: pnpm run build
+
+      - name: Assemble deploy bundle
+        # Cloudflare Pages wants a single directory. Merge site/
+        # (the HTML at root) with dist/ (PNG / ICO / SVGs).
+        run: |
+          mkdir -p deploy
+          cp -R site/. deploy/
+          cp -R dist/. deploy/
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          # --commit-dirty=true silences wrangler's "uncommitted
+          # changes" warning (wrangler-action auto-installs itself
+          # into the runner's package.json, but the runner is
+          # ephemeral and the mutation never touches the real repo).
+          command: pages deploy deploy --project-name=branding --branch=main --commit-dirty=true

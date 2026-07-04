@@ -1,0 +1,22 @@
+{
+  "name": "@n3ary/branding",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Brand assets, brand manual, and rebuild scripts for the n3ary / neary visual identity.",
+  "type": "module",
+  "scripts": {
+    "build": "tsx scripts/copy-sources.ts && tsx scripts/gen-pngs.ts && tsx scripts/gen-ico.ts && tsx scripts/gen-social.ts",
+    "build:copy-sources": "tsx scripts/copy-sources.ts",
+    "build:pngs": "tsx scripts/gen-pngs.ts",
+    "build:ico": "tsx scripts/gen-ico.ts",
+    "build:social": "tsx scripts/gen-social.ts",
+    "check": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "sharp": "^0.34.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

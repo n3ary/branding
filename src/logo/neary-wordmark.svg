@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" width="720" height="220" role="img" aria-label="neary">
+  <title>neary wordmark</title>
+
+  <g>
+    <rect width="220" height="220" fill="#4F46E5"/>
+    <path d="M 60 43 L 161 43 Q 182 43 182 64 L 182 116 Q 182 137 163 148 L 111 200 L 59 148 Q 40 137 40 116 L 40 64 Q 40 43 60 43 Z" fill="#FFFFFF"/>
+    <circle cx="111" cy="92" r="15" fill="#4F46E5"/>
+    <circle cx="192" cy="28" r="7" fill="#22C55E"/>
+  </g>
+
+  <text x="252" y="155"
+        font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Inter, sans-serif"
+        font-size="140"
+        font-weight="700"
+        letter-spacing="-5"
+        fill="#0F172A">neary</text>
+</svg>

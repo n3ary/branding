@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="neary">
+  <title>neary (maskable)</title>
+  <desc>Maskable variant — pulled inside the central 80% safe area.</desc>
+
+  <rect width="256" height="256" fill="#4F46E5"/>
+
+  <path d="M 84 70 L 172 70 Q 192 70 192 90 L 192 134 Q 192 152 174 162 L 128 208 L 82 162 Q 64 152 64 134 L 64 90 Q 64 70 84 70 Z" fill="#FFFFFF"/>
+  <circle cx="128" cy="112" r="14" fill="#4F46E5"/>
+
+  <circle cx="216" cy="60" r="7" fill="#22C55E"/>
+</svg>

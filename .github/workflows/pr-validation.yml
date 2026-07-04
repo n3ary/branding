@@ -1,0 +1,63 @@
+name: PR Validation
+
+on:
+  pull_request:
+    branches: [main]
+
+# main is protected — every change goes through a PR. This workflow
+# checks that the regen scripts typecheck and that the build
+# produces the expected artefacts (regression catch if a script
+# silently drops an output).
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v6.4.0
+        with:
+          node-version: 24
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6.0.9
+        with:
+          version: 11
+
+      - name: Install dependencies
+        # --no-frozen-lockfile: same rationale as the app repo —
+        # pnpm 11's lockfile supply-chain check can fail on stale
+        # entries from a registry republish; clean + re-resolve
+        # keeps the install robust.
+        run: |
+          pnpm clean --lockfile
+          pnpm install --no-frozen-lockfile
+
+      - name: Type check
+        run: pnpm run check
+
+      - name: Build artefacts
+        run: pnpm run build
+
+      - name: Verify expected artefacts
+        run: |
+          test -f dist/favicon.ico
+          test -f dist/social/social-preview.png
+          for size in 16 32 64 128 180 192 256 512 1024; do
+            test -f "dist/neary-${size}.png"
+          done
+          for svg in src/logo/*.svg; do
+            name=$(basename "$svg")
+            test -f "dist/logo/$name"
+          done
+          echo "all expected artefacts present"

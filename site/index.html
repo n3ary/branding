@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>neary — Brand Manual (visual)</title>
+<style>
+  :root {
+    --indigo: #4F46E5;
+    --indigo-dark: #3730A3;
+    --indigo-light: #818CF8;
+    --white: #FFFFFF;
+    --green: #22C55E;
+    --slate-900: #0F172A;
+    --slate-700: #334155;
+    --slate-600: #475569;
+    --slate-400: #94A3B8;
+    --slate-200: #E2E8F0;
+    --slate-100: #F1F5F9;
+    --slate-50: #F8FAFC;
+    --bg: #F8FAFC;
+    --panel: #FFFFFF;
+    --ink: #0F172A;
+    --muted: #64748B;
+    --line: #E2E8F0;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 15px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, sans-serif;
+  }
+  main { max-width: 1100px; margin: 0 auto; padding: 56px 32px 96px; }
+  h1 { font-size: 36px; margin: 0 0 8px; letter-spacing: -0.02em; font-weight: 800; }
+  h2 { font-size: 24px; margin: 48px 0 8px; letter-spacing: -0.01em; font-weight: 700; padding-top: 32px; border-top: 1px solid var(--line); }
+  h3 { font-size: 16px; margin: 24px 0 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--slate-600); }
+  p { margin: 0 0 12px; color: var(--slate-700); }
+  p.lede { color: var(--slate-600); font-size: 17px; margin: 0 0 40px; }
+  section { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 32px; margin-bottom: 24px; }
+  .grid { display: grid; gap: 24px; }
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+  .swatch { border-radius: 12px; padding: 16px; color: #fff; min-height: 120px; display: flex; flex-direction: column; justify-content: flex-end; font-size: 13px; line-height: 1.4; }
+  .swatch.light { color: var(--slate-900); border: 1px solid var(--line); }
+  .swatch code { font-family: ui-monospace, "SF Mono", Menlo, monospace; opacity: 0.85; }
+  .icon-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+  .icon-grid .item { text-align: center; }
+  .icon-grid img { display: block; margin: 0 auto 6px; border-radius: 4px; max-width: 100%; height: auto; }
+  .icon-grid .label { font-size: 11px; color: var(--muted); }
+  .dark-section { background: var(--slate-900); border-color: var(--slate-900); }
+  .dark-section h2, .dark-section p { color: var(--slate-200); }
+  .dark-section h3 { color: var(--slate-400); }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--line); }
+  th { font-weight: 600; color: var(--slate-600); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+  td code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 13px; }
+  .rule-list { padding-left: 20px; color: var(--slate-700); }
+  .rule-list li { margin-bottom: 6px; }
+  .dont { color: #B91C1C; }
+  .do { color: #15803D; }
+  .hero { background: var(--indigo); color: #fff; border-radius: 16px; padding: 48px; text-align: center; }
+  .hero img { width: 220px; height: 220px; border-radius: 32px; box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+  .hero h1 { color: #fff; margin-top: 24px; }
+  .hero p { color: rgba(255,255,255,0.85); }
+  .pair { display: grid; grid-template-columns: 220px 1fr; gap: 32px; align-items: center; }
+  .pair-text h3 { margin-top: 0; }
+  code.inline { font-family: ui-monospace, "SF Mono", Menlo, monospace; background: var(--slate-100); padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+
+<div class="hero">
+  <img src="logo/neary-logo.svg" alt="neary logo">
+  <h1>neary</h1>
+  <p>Brand Manual — visual companion to <code style="color:#fff;background:rgba(255,255,255,0.15);padding:2px 8px;border-radius:4px">BRANDING.md</code></p>
+</div>
+
+<h2>1. Logo</h2>
+
+<section>
+  <h3>Primary mark</h3>
+  <div class="pair">
+    <img src="logo/neary-logo.svg" width="220" height="220" alt="primary logo">
+    <div class="pair-text">
+      <p>A stylized <strong>location pin</strong> — the most direct metaphor for what neary does: locate, transit, near.</p>
+      <p>Saturated indigo background, bold white mark, indigo "stop dot" punched out at the centre.</p>
+      <p>Asymmetric by construction: the pin's pointed base sits off-centre to the left.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Variants</h3>
+  <div class="grid grid-3">
+    <div>
+      <img src="logo/neary-logo.svg" width="180" height="180" alt="primary" style="border-radius:12px">
+      <p><strong>Primary</strong> — saturated indigo. Default for everything.</p>
+    </div>
+    <div>
+      <img src="logo/neary-logo-maskable.svg" width="180" height="180" alt="maskable" style="border-radius:12px">
+      <p><strong>Maskable</strong> — for Android adaptive icons (safe-area pulled in).</p>
+    </div>
+    <div>
+      <img src="logo/neary-logo-mono.svg" width="180" height="180" alt="monochrome" style="border-radius:12px">
+      <p><strong>Monochrome</strong> — single-ink black on transparent.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Wordmarks</h3>
+  <div class="grid grid-2">
+    <div>
+      <img src="logo/neary-wordmark.svg" width="500" alt="neary wordmark">
+      <p>neary wordmark — product pages, README headers.</p>
+    </div>
+    <div>
+      <img src="logo/n3ary-wordmark.svg" width="500" alt="n3ary wordmark">
+      <p>n3ary wordmark — org-level docs, n3ary.com masthead.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>GitHub-ready PNGs</h3>
+  <p>Every size you need for org avatar, repo social preview, README badges, favicon.</p>
+  <div class="icon-grid">
+    <div class="item"><img src="neary-16.png" width="16" height="16"><div class="label">16 px</div></div>
+    <div class="item"><img src="neary-32.png" width="32" height="32"><div class="label">32 px</div></div>
+    <div class="item"><img src="neary-64.png" width="64" height="64"><div class="label">64 px</div></div>
+    <div class="item"><img src="neary-128.png" width="128" height="128"><div class="label">128 px</div></div>
+    <div class="item"><img src="neary-180.png" width="180" height="180"><div class="label">180 px</div></div>
+    <div class="item"><img src="neary-192.png" width="192" height="192"><div class="label">192 px</div></div>
+    <div class="item"><img src="neary-256.png" width="256" height="256"><div class="label">256 px</div></div>
+    <div class="item"><img src="neary-512.png" width="512" height="512"><div class="label">512 px</div></div>
+    <div class="item"><img src="neary-1024.png" width="1024" height="1024"><div class="label">1024 px</div></div>
+  </div>
+  <p style="margin-top:16px;font-size:13px;color:var(--muted)">Plus <code class="inline">favicon.ico</code> (multi-resolution 16 + 32) and <code class="inline">social-preview.png</code> (1280×640).</p>
+</section>
+
+<h2>2. Color</h2>
+
+<section>
+  <h3>Primary palette</h3>
+  <div class="grid grid-3">
+    <div class="swatch" style="background: var(--indigo)">
+      <strong style="font-size:15px">Indigo 600</strong>
+      <code>#4F46E5</code>
+      <span style="opacity:0.8">brand · logo background</span>
+    </div>
+    <div class="swatch" style="background: var(--white)" class="light" >
+      <strong style="font-size:15px;color:var(--slate-900)">White</strong>
+      <code style="color:var(--slate-900)">#FFFFFF</code>
+      <span style="color:var(--slate-600)">logo mark · text on indigo</span>
+    </div>
+    <div class="swatch" style="background: var(--green)">
+      <strong style="font-size:15px">Green 500</strong>
+      <code>#22C55E</code>
+      <span style="opacity:0.85">live GPS vehicle accent (only)</span>
+    </div>
+  </div>
+  <p style="margin-top:16px"><strong>Rule:</strong> green is reserved for the live-vehicle semantic. Don't use it elsewhere.</p>
+</section>
+
+<section>
+  <h3>Supporting palette</h3>
+  <div class="grid grid-4">
+    <div class="swatch" style="background: var(--slate-900)">
+      <strong>Slate 900</strong>
+      <code>#0F172A</code>
+    </div>
+    <div class="swatch" style="background: var(--slate-600)">
+      <strong>Slate 600</strong>
+      <code>#475569</code>
+    </div>
+    <div class="swatch light" style="background: var(--slate-200); color: var(--slate-900)">
+      <strong>Slate 200</strong>
+      <code style="color:var(--slate-900)">#E2E8F0</code>
+    </div>
+    <div class="swatch light" style="background: var(--slate-100); color: var(--slate-900)">
+      <strong>Slate 100</strong>
+      <code style="color:var(--slate-900)">#F1F5F9</code>
+    </div>
+  </div>
+</section>
+
+<h2>3. Typography</h2>
+
+<section>
+  <h3>System sans-serif stack</h3>
+  <p>The wordmark and brand type use the system font stack for portability — no web-font loading, works offline.</p>
+  <pre style="background:var(--slate-900);color:#fff;padding:16px;border-radius:8px;font-family:ui-monospace,Menlo,monospace;font-size:13px;overflow:auto">font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, sans-serif;</pre>
+
+  <table style="margin-top:24px">
+    <thead><tr><th>Weight</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td>700 — bold</td><td>wordmark, H1, H2</td></tr>
+      <tr><td>600 — semibold</td><td>H3, subheadings</td></tr>
+      <tr><td>500 — medium</td><td>labels, captions</td></tr>
+      <tr><td>400 — regular</td><td>body text</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<h2>4. Application</h2>
+
+<section>
+  <h3>iOS / Android / GitHub</h3>
+  <div class="grid grid-3">
+    <div>
+      <div style="background:var(--indigo);border-radius:38px;padding:24px;width:180px;height:180px;display:flex;align-items:center;justify-content:center;margin:0 auto;">
+        <img src="logo/neary-logo.svg" width="120" height="120" style="border-radius:18px" alt="iOS">
+      </div>
+      <p style="text-align:center;margin-top:12px"><strong>iOS Home</strong><br><span style="font-size:13px;color:var(--muted)">180×180 @3x</span></p>
+    </div>
+    <div>
+      <div style="background:var(--indigo);border-radius:50%;padding:24px;width:180px;height:180px;display:flex;align-items:center;justify-content:center;margin:0 auto;">
+        <img src="logo/neary-logo.svg" width="120" height="120" style="border-radius:50%" alt="Android">
+      </div>
+      <p style="text-align:center;margin-top:12px"><strong>Android PWA</strong><br><span style="font-size:13px;color:var(--muted)">192×192, 512×512</span></p>
+    </div>
+    <div>
+      <div style="background:var(--slate-100);border-radius:14px;padding:24px;width:180px;height:180px;display:flex;align-items:center;justify-content:center;margin:0 auto;border:1px solid var(--line);">
+        <img src="logo/neary-logo.svg" width="120" height="120" style="border-radius:12px" alt="GitHub">
+      </div>
+      <p style="text-align:center;margin-top:12px"><strong>GitHub avatar</strong><br><span style="font-size:13px;color:var(--muted)">SVG or 512×512 PNG</span></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Social preview (GitHub social card)</h3>
+  <img src="social/social-preview.png" width="100%" style="border-radius:14px;max-width:1080px;display:block" alt="social preview">
+  <p style="margin-top:12px"><code class="inline">social-preview.png</code> · 1280×640 · upload via <strong>Repo → Settings → Social preview</strong></p>
+</section>
+
+<section class="dark-section">
+  <h2 style="border-color:transparent">5. On dark</h2>
+  <p>The saturated indigo background stands out on dark surfaces — no changes needed.</p>
+  <div class="grid grid-3" style="margin-top:24px">
+    <div><img src="logo/neary-logo.svg" width="180" height="180" style="border-radius:14px"><p style="margin-top:8px">primary on slate-900</p></div>
+    <div><img src="logo/neary-logo.svg" width="180" height="180" style="border-radius:14px"><p style="margin-top:8px">primary on dark surface</p></div>
+    <div><img src="logo/neary-logo.svg" width="180" height="180" style="border-radius:14px"><p style="margin-top:8px">primary on dim card</p></div>
+  </div>
+</section>
+
+<h2>6. Don't</h2>
+
+<section>
+  <ul class="rule-list">
+    <li class="dont">❌ Rotate the mark</li>
+    <li class="dont">❌ Add a stroke / outline</li>
+    <li class="dont">❌ Use a gradient or drop shadow</li>
+    <li class="dont">❌ Recolor (other than the official palette)</li>
+    <li class="dont">❌ Use green anywhere except the live GPS vehicle accent</li>
+    <li class="dont">❌ Place on a background that loses contrast</li>
+    <li class="dont">❌ Stretch non-uniformly</li>
+    <li class="dont">❌ Add elements behind or around the mark</li>
+    <li class="dont">❌ Use the monochrome variant on color</li>
+  </ul>
+</section>
+
+</main>
+</body>
+</html>

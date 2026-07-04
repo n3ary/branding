@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="neary">
+  <title>neary</title>
+  <desc>Saturated indigo background with a bold white stylized marker shape. Vivid color, specific character, iOS-native icon language. No outlines, no gradients, no 3D.</desc>
+
+  <rect width="256" height="256" fill="#4F46E5"/>
+
+  <!-- Bold white stylized marker — asymmetric, with a deliberate inner detail -->
+  <path d="M 70 50 L 186 50 Q 210 50 210 74 L 210 134 Q 210 158 188 170 L 128 230 L 68 170 Q 46 158 46 134 L 46 74 Q 46 50 70 50 Z" fill="#FFFFFF"/>
+
+  <!-- Inner detail — the inner "stop dot" punched out in the background color -->
+  <circle cx="128" cy="106" r="18" fill="#4F46E5"/>
+</svg>

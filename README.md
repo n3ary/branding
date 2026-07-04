@@ -83,3 +83,7 @@ branding/
 - [docs/concepts/brand-manual.md](docs/concepts/brand-manual.md) — the brand itself.
 - [docs/specs/github-asset-setup.md](docs/specs/github-asset-setup.md) — consumer setup.
 - [n3ary/standards](https://github.com/n3ary/standards) — the org standards.
+
+## License
+
+[Creative Commons Attribution 4.0 International (CC BY 4.0)](./LICENSE) — free to use, share, and adapt, even commercially, as long as you credit the source. See the LICENSE file for the full terms.

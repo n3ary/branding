@@ -17,3 +17,6 @@ node_modules/
 .kiro/
 .claude/
 .kilo/worktrees/
+
+# CI deploy bundle (merged site/ + dist/ for Cloudflare Pages) — never committed
+deploy/

@@ -1,12 +1,18 @@
 packages:
   - '.'
 
-# pnpm 11 blocks postinstall scripts by default. The regen scripts
-# need sharp's native binary (libvips + prebuilt binaries) and
-# tsx's esbuild binary, both built during install. Pre-approve
-# them — neither is fetched fresh per install (sharp is a pinned
-# dep, tsx is a devDep); the build script is what populates the
-# platform-specific binary into node_modules.
+# pnpm 11 blocks postinstall scripts by default. Pre-approve:
+#
+# - esbuild: needed by tsx (devDep) to bundle its CLI binary.
+# - sharp: needed by our regen scripts (libvips native binary).
+# - workerd: needed by the deploy step's auto-installed wrangler
+#   (workerd is Cloudflare's JS runtime; wrangler pulls it in
+#   to test Worker code locally). Only matters in CI.
+#
+# These scripts run on the install step (the dev box, the CI
+# runner), not in the published bundle. Re-evaluate if any of
+# these packages get compromised upstream.
 allowBuilds:
   esbuild: true
   sharp: true
+  workerd: true

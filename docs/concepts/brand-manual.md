@@ -23,6 +23,8 @@ The full-color logo on a saturated indigo background. **This is the default for 
 | `neary-logo-mono.svg` | Single-ink black on transparent. Use for etched/laser print, single-ink merch, or any context that can't render color. |
 | `neary-wordmark.svg` | Primary mark + "neary" wordmark. For product pages, README headers. |
 | `n3ary-wordmark.svg` | Primary mark + "n3ary" wordmark. For org-level docs, the n3ary.com masthead. |
+| `neary-wordmark-light.svg` | Same as `neary-wordmark.svg` but with **white text** — for use on **dark surfaces** (dark-mode websites, dark hero sections, slides). The mark stays saturated indigo + white pin; only the wordmark text fill changes from `#0F172A` to `#FFFFFF`. |
+| `n3ary-wordmark-light.svg` | Same as `n3ary-wordmark.svg` but with white text — for dark surfaces. |
 
 ### 1.3 Construction
 
@@ -165,8 +167,10 @@ When writing about or for neary:
 | `neary-logo.svg` | Primary mark |
 | `neary-logo-maskable.svg` | Android adaptive safe-area variant |
 | `neary-logo-mono.svg` | Single-ink black on transparent |
-| `neary-wordmark.svg` | Mark + "neary" |
-| `n3ary-wordmark.svg` | Mark + "n3ary" |
+| `neary-wordmark.svg` | Mark + "neary" (dark text) |
+| `n3ary-wordmark.svg` | Mark + "n3ary" (dark text) |
+| `neary-wordmark-light.svg` | Mark + "neary" (white text) — for dark surfaces |
+| `n3ary-wordmark-light.svg` | Mark + "n3ary" (white text) — for dark surfaces |
 | `social-preview.svg` | Source for the GitHub social card |
 
 ### 6.2 PNG exports (raster — specific sizes)
@@ -205,6 +209,7 @@ A quick reference. If you're about to do any of these, don't.
 - ❌ Stretch non-uniformly
 - ❌ Add elements behind or around the mark
 - ❌ Use the monochrome variant on color
+- ❌ Use the dark-text wordmark on a dark surface — use `*-wordmark-light.svg` instead
 - ❌ Use a custom typography weight outside the stack
 
 ---

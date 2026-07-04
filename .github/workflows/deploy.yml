@@ -58,7 +58,7 @@ jobs:
         uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           # --commit-dirty=true silences wrangler's "uncommitted
           # changes" warning (wrangler-action auto-installs itself
           # into the runner's package.json, but the runner is

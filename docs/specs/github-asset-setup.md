@@ -22,7 +22,7 @@ GitHub accepts SVG for org avatars as of recent updates. If SVG doesn't take, us
 
 This is the 1280 × 640 image shown when the repo is shared on social media or at the top of the repo page.
 
-For each repo (e.g. `neary`, `neary-gtfs`, `cluj-napoca-gtfs-adapter`):
+For each repo (e.g. `n3ary/app`, `n3ary/gtfs-publisher`):
 
 1. Go to the repo → **Settings** → **General** → scroll to **"Social preview"**
 2. Click **"Upload an image"**

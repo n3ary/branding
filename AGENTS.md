@@ -50,6 +50,11 @@ The `site/` directory is what `branding.n3ary.com` serves. The deploy
 workflow ships `site/` + `dist/` to Cloudflare Pages on every push to
 `main`. Don't put anything sensitive in `site/`.
 
+Before opening a PR that touches anything under `.github/`, run
+`gh pr list --state open` to confirm no in-flight PR is already
+refactoring CI on the same files. Two parallel CI refactors both
+end up stale — one of them lands, the other gets closed.
+
 ## Vendored standards
 
 The full org standards are at [n3ary/standards](https://github.com/n3ary/standards).

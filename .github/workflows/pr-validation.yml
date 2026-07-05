@@ -4,18 +4,22 @@ on:
   pull_request:
     branches: [main]
 
-# main is protected — every change goes through a PR. This workflow
-# checks that the regen scripts typecheck and that the build
-# produces the expected artefacts (regression catch if a script
-# silently drops an output).
+# Shared base PR-validation lives in n3ary/actions. enable-drift-check
+# is false because branding does not vendor n3ary/standards (the org
+# standards live one click away at github.com/n3ary/standards).
+# Repo-specific jobs (type-check, build, artefact verification) stay local.
 
 permissions:
   contents: read
 
 jobs:
+  shared:
+    uses: n3ary/actions/.github/workflows/pr-validation.yml@v1
+    with:
+      enable-drift-check: false
+
   validate:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout PR branch
         uses: actions/checkout@v6
@@ -35,7 +39,7 @@ jobs:
           version: 11
 
       - name: Install dependencies
-        # --no-frozen-lockfile: same rationale as the app repo —
+        # --no-frozen-lockfile: same rationale as the app repo -
         # pnpm 11's lockfile supply-chain check can fail on stale
         # entries from a registry republish; clean + re-resolve
         # keeps the install robust.

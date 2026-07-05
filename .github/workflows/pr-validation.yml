@@ -13,10 +13,10 @@ permissions:
   contents: read
 
 jobs:
-    shared:
+  shared:
     uses: n3ary/actions/.github/workflows/pr-validation.yml@v5
-      with:
-        enable-drift-check: false
+    with:
+      enable-drift-check: false
 
   validate:
     runs-on: ubuntu-latest

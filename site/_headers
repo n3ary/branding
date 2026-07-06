@@ -1,0 +1,35 @@
+# Cloudflare Pages headers — serves branding.n3ary.com.
+# Site content lives under site/index.html, build artefacts under dist/.
+# The deploy workflow merges both into deploy/ and ships that to the
+# `branding` Pages project. This file sits at the root of the merged
+# bundle so Pages picks it up.
+# Docs: https://developers.cloudflare.com/pages/configuration/headers/
+# Tracked by n3ary/app#186.
+
+/*
+  # HSTS — force HTTPS for one year across all subdomains of n3ary.com.
+  # Deliberately omits `preload`: preload is a one-way door and needs a
+  # separate hstspreload.org submission after a 1-year soak.
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+  # Clickjacking protection. The brand page is a visual reference, never
+  # meant to be framed.
+  X-Frame-Options: DENY
+
+  # MIME sniffing off.
+  X-Content-Type-Options: nosniff
+
+  # Referrer policy — same-origin / strict-origin.
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # Permissions policy — closed posture. The brand page is a static
+  # reference with no JS, no forms, no camera, no geolocation.
+  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()
+
+  # Content-Security-Policy — strict. The page has no JS, no fonts, no
+  # forms, no fetch, and no iframes. `style-src 'unsafe-inline'` is the
+  # one pragmatic concession for the inline <style> block at the top of
+  # site/index.html. `img-src 'self'` covers the local logo/ + social/
+  # + neary-*.png assets that ship in the dist/ half of the deploy
+  # bundle.
+  Content-Security-Policy: default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests

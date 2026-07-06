@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   shared:
-    uses: n3ary/actions/.github/workflows/pr-validation.yml@v5
+    uses: n3ary/actions/.github/workflows/pr-validation.yml@v6
     with:
       enable-drift-check: false
 

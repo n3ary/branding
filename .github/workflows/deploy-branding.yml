@@ -26,8 +26,13 @@ permissions:
 
 jobs:
   deploy:
+    # Skip deploy when the release bot (n3ary-release-bot) is the actor.
+    # The bot's release/calver-* PRs land on main as a squash merge; the
+    # `push` event fires with `github.actor = n3ary-release-bot[bot]`.
+    # Branding has no version concept, so the bot's commits are
+    # empty. Re-deploying is harmless but wasteful.
+    if: "!contains(github.event.head_commit.message, '[skip ci]') && github.actor != 'n3ary-release-bot[bot]'"
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
 
     steps:
       - name: Checkout

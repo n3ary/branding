@@ -87,3 +87,4 @@ branding/
 ## License
 
 [Creative Commons Attribution 4.0 International (CC BY 4.0)](./LICENSE) — free to use, share, and adapt, even commercially, as long as you credit the source. See the LICENSE file for the full terms.
+

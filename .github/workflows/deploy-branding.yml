@@ -31,7 +31,7 @@ jobs:
     # `push` event fires with `github.actor = n3ary-release-bot[bot]`.
     # Branding has no version concept, so the bot's commits are
     # empty. Re-deploying is harmless but wasteful.
-    if: "!contains(github.event.head_commit.message, '[skip ci]') && github.actor != 'n3ary-release-bot[bot]'"
+    if: "!contains(github.event.head_commit.message, '[skip ci]') && github.actor == 'n3ary-release-bot[bot]'"
     runs-on: ubuntu-latest
 
     steps:

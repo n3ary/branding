@@ -1,4 +1,17 @@
-name: PR Validation
+# ----------------------------------------------------------------------------
+# [check] PR validation (on PR)
+#
+# Validates every PR: shared ASCII + standards-drift checks (drift disabled
+# because branding does not vendor n3ary/standards), repo-specific type-check,
+# build, and artefact verification. Never pushes to the branch.
+#
+# Trigger:     pull_request
+# Permissions: contents: read
+# Secrets:     none
+# Owner:       @ciotlosm
+# Run time:    ~1-2 min
+# ----------------------------------------------------------------------------
+name: '[check] PR validation (on PR)'
 
 on:
   pull_request:

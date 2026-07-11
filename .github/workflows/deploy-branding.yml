@@ -1,16 +1,21 @@
-name: Deploy to Cloudflare Pages
+# ----------------------------------------------------------------------------
+# [deploy] branding assets (on push to main)
+#
+# Deploys site/ + the freshly-built dist/ to the Cloudflare Pages
+# project 'branding' (branding.n3ary.com). The Pages project name stays
+# 'branding' in Cloudflare even though the repo lives at n3ary/branding.
+#
+# Trigger:     push to main
+# Permissions: contents: read
+# Secrets:     CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID
+# Owner:       @ciotlosm
+# Run time:    ~2-3 min
+# ----------------------------------------------------------------------------
+name: '[deploy] branding assets (on push to main)'
 
 on:
   push:
     branches: [main]
-
-# Deploys site/ + the freshly-built dist/ to the Cloudflare Pages
-# project 'branding' (branding.n3ary.com).
-#
-# The Pages project name stays 'branding' in Cloudflare even though
-# the repo lives at n3ary/branding. Same rationale as the app repo:
-# deploy-time references are the source-of-truth, the custom domain
-# follows the project.
 
 concurrency:
   group: branding-deploy

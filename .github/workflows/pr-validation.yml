@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   shared:
-    uses: n3ary/actions/.github/workflows/pr-validation.yml@v6
+    uses: n3ary/actions/.github/workflows/pr-validation.yml@v22
     with:
       enable-drift-check: false
 
@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout PR branch
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0

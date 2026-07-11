@@ -1,6 +1,6 @@
 {
   "name": "@n3ary/branding",
-  "version": "26.7.11-3",
+  "version": "26.7.11-4",
   "private": true,
   "description": "Brand assets, brand manual, and rebuild scripts for the n3ary / neary visual identity.",
   "type": "module",

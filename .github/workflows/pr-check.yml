@@ -26,8 +26,8 @@ permissions:
   contents: read
 
 jobs:
-  shared:
-    uses: n3ary/actions/.github/workflows/pr-check.yml@v23
+  pr-check:
+    uses: n3ary/actions/.github/workflows/pr-validation.yml@v23
     with:
       enable-drift-check: false
 
